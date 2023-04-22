@@ -57,7 +57,7 @@ bajar_caja(mono, bajar, caja, X):-                          % input correcto: mo
     realiza(mono, bajar, caja),write("El mono no puede bajar la caja porque ya esta en el piso").
 
 % Regla 5: mueve la caja para alcanzar el platano
-mover_caja(mono, caja, X, Y, Z) :- 
+mover_caja(mono, caja, X, Y, Z) :-                          %input correcto: mover_caja(mono, caja, piso, cerca, empujar).
     se_ubica(caja, X), X = piso,
     distancia(mono, caja, Y), Y = cerca,
     realiza(mono, Z, caja), Z = empujar,
@@ -65,10 +65,10 @@ mover_caja(mono, caja, X, Y, Z) :-
     write('El mono puede empujar y ubicar la caja para alcanzar el platano').
 
 % Regla 6: no se cumple las condiciones para mover la caja
-mover_caja(mono, caja, X, Y) :-
+mover_caja(mono, caja, X, Y, Z) :-                          %input correcto: mover_caja(mono, caja, piso, lejos, empujar).
 
     write('La caja se encuentra en un lugar no accesible ( '),write(X), write(' ) y el mono esta '), write(Y), nl,
-    write('El mono no puede moverla porque la caja no es accesible').
+    write('El mono no puede: '), write(Z), write(' la caja') nl.
 
 % Regla 7: Si el mono puede agarrar el platano
 agarrar_platano(X, Y, Z, W, V, U, T, S):-                   % input correcto: agarrar_platano(mono, hambriento, platano, techo, piso, subir, caja, agarrar).
