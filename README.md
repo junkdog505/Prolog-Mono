@@ -1,4 +1,4 @@
-##  *Amézquita Soto, Edison Cristian  2020700141*
+##  *Amézquita Soto, Edison Cristian*
 
 
 # Ejercicio práctico - Sistemas Inteligentes
